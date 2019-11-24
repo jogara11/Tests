@@ -56,6 +56,36 @@ int iNumberOfPathsOnlyRightAndDown(int r, int c)
     return iNumberOfPathsOnlyRightAndDown(r - 1, c) + iNumberOfPathsOnlyRightAndDown(r, c - 1); 
 }
 
+int iMaxValueOfVector(int sz, int * vector)
+{
+    int iReturn = 0;
+    for(int i=0; i<sz; i++)
+    {
+        if(iReturn < vector[i])
+        {
+            iReturn = vector[i];
+        }
+    }
+    return iReturn;
+}
+
+
+int iMinValueOfVector(int sz, int * vector)
+{
+    int iReturn;
+    if(0 != sz)
+        iReturn = vector[sz-1];
+    for(int i=0; i<sz; i++)
+    {
+        if(iReturn > vector[i])
+        {
+            iReturn = vector[i];
+        }
+    }
+    return iReturn;
+}
+
+
 void vPrintMatrix(sMatrix * matrix)
 {
     printf("\n");
