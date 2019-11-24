@@ -11,6 +11,10 @@ typedef struct{
 
 void vDestroyMatrix(sMatrix * matrix)
 {
+    for (int i = 0; i < (matrix->rows); ++i)
+    {
+        free(matrix->data[i]);
+    }
     free((matrix->data));
     free(matrix);
 }
@@ -45,6 +49,12 @@ void vInitMatrix(sMatrix * matrix)
     }
 }
 
+int iNumberOfPathsOnlyRightAndDown(int r, int c) 
+{
+    if ((1 == r) || (1 == c)) 
+        return 1; 
+    return iNumberOfPathsOnlyRightAndDown(r - 1, c) + iNumberOfPathsOnlyRightAndDown(r, c - 1); 
+}
 
 void vPrintMatrix(sMatrix * matrix)
 {
