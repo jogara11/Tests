@@ -1,5 +1,18 @@
 #define CREATE_CHAR_ARRAY(SZ) (malloc(SZ * sizeof(unsigned char)))
 
+void vPrintPrimes(unsigned char * ptrIntA, unsigned long long int  iSize)
+{
+    printf("Primes until %lld:\n",MAX_NUM);
+    for(unsigned long long int  i=2; i<iSize; i++)
+    {
+        if(0 != *(ptrIntA+i) )
+        {
+            printf("%lld\t",i);
+        }
+    }
+    printf("\n");
+}
+
 void vInitArrayWith(unsigned char * ptrIntA, unsigned long long int  iSize, unsigned char iVal)
 {
     for(unsigned long long int  i=0; i<iSize; i++)
@@ -13,7 +26,7 @@ unsigned long long int lliMarkAllPrimesUntilX(unsigned char * aptrIntArray, unsi
     unsigned long long int iStop;
     unsigned long long int iMaxNum;
 
-    iTotalPrimes = aulliX;
+    iTotalPrimes = aulliX-1;
     aulliX++;
     vInitArrayWith(aptrIntArray, aulliX, 1);
 
