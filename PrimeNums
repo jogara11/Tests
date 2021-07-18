@@ -28,8 +28,11 @@ unsigned long long int lliMarkAllPrimesUntilX(unsigned char * aptrIntArray, unsi
         {
             if(1 == *(aptrIntArray+j))
             {
-              *(aptrIntArray+(j*i)) = 0;
-              iTotalPrimes--;
+                if(1 == *(aptrIntArray+(j*i)))
+                {
+                    *(aptrIntArray+(j*i)) = 0;
+                    iTotalPrimes--;
+                }
             }
         }
     }
