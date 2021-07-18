@@ -4,12 +4,19 @@
 
 void vPrintPrimes(unsigned char * ptrIntA, unsigned long long int  iSize)
 {
+    unsigned char iCount = 0;
     printf("Primes until %lld:\n",MAX_NUM);
     for(unsigned long long int  i=2; i<iSize; i++)
     {
         if(0 != *(ptrIntA+i) )
         {
             printf("%lld\t",i);
+            iCount++;
+            if(20==iCount)
+            {
+                iCount = 0;
+                printf("\n");
+            }
         }
     }
     printf("\n");
