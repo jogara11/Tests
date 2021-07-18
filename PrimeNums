@@ -1,3 +1,5 @@
+#include <math.h>
+
 #define CREATE_CHAR_ARRAY(SZ) (malloc(SZ * sizeof(unsigned char)))
 
 void vPrintPrimes(unsigned char * ptrIntA, unsigned long long int  iSize)
@@ -30,12 +32,10 @@ unsigned long long int lliMarkAllPrimesUntilX(unsigned char * aptrIntArray, unsi
     aulliX++;
     vInitArrayWith(aptrIntArray, aulliX, 1);
 
-    //TO DO fix limit
-    iStop = ((aulliX/2)+1);
+    iStop = (unsigned long long int)(sqrtl(aulliX) + 1);
 
     for(unsigned long long int  i=2; i<iStop; i++)
     {
-        iStop = (aulliX/i)+1;
         iMaxNum = aulliX/i;
         for(unsigned long long int  j=iMaxNum; j>=i; j--)
         {
@@ -51,3 +51,4 @@ unsigned long long int lliMarkAllPrimesUntilX(unsigned char * aptrIntArray, unsi
     }
     return iTotalPrimes;
 }
+
