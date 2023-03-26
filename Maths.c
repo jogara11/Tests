@@ -2,6 +2,7 @@
 
 int iBinomialCoeffOn3(int, int);
 int iGreatestCommonDivisor(int, int);
+int iFactorial(unsigned int);
 
 
 /**************************************/
@@ -56,3 +57,20 @@ int iGreatestCommonDivisor(int a, int b)
     
     return iGreatestCommonDivisor(ilB, ilModulus);
 }
+
+/*****************************************/
+/* Calculate the factorial of an integer */
+/* Complexity: O()                       */
+/*****************************************/
+int iFactorial(unsigned int n)
+{
+    int iTemp = 1;
+    if(1 < n)
+    {
+        iTemp = n * iFactorial(n-1);
+    }
+    return iTemp;
+}
+
+
+
